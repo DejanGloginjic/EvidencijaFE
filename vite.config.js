@@ -9,5 +9,5 @@ export default defineConfig({
   },
 });
 
-// Opcionalno: ako želite da koristite 'open' direktno, možete dodati sledeći kod
-open("http://localhost:3000"); // Zamenite sa pravim URL-om i portom vaše aplikacije
+// // Opcionalno: ako želite da koristite 'open' direktno, možete dodati sledeći kod
+// open("http://localhost:3000"); // Zamenite sa pravim URL-om i portom vaše aplikacije

@@ -23,7 +23,9 @@ export default function EditRecordModal({ onEdit, onClose, id }) {
 
   const fetchRecord = async () => {
     try {
-      const response = await fetch("http://localhost:3000/record/" + id);
+      const response = await fetch(
+        "https://evidencijabackend-1.onrender.com/record/" + id
+      );
       if (response.ok) {
         const data = await response.json();
         setRecord(data);

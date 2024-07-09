@@ -13,7 +13,9 @@ export default function Maintenance() {
 
   const fetchRecords = async () => {
     try {
-      const response = await fetch("http://localhost:3000/maintenanceRecords");
+      const response = await fetch(
+        "https://evidencijabackend-1.onrender.com/maintenanceRecords"
+      );
       if (response.ok) {
         const data = await response.json();
         setRecords(data);
@@ -29,13 +31,16 @@ export default function Maintenance() {
   const createRecord = async (record) => {
     console.log(record);
     try {
-      const response = await fetch("http://localhost:3000/maintenanceRecord", {
-        method: "POST",
-        body: JSON.stringify(record),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://evidencijabackend-1.onrender.com/maintenanceRecord",
+        {
+          method: "POST",
+          body: JSON.stringify(record),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       if (response.ok) {
         const data = await response.json();
         console.log(data);
@@ -52,7 +57,8 @@ export default function Maintenance() {
   const editRecord = async (record) => {
     try {
       const response = await fetch(
-        "http://localhost:3000/maintenanceRecord/" + record.id,
+        "https://evidencijabackend-1.onrender.com/maintenanceRecord/" +
+          record.id,
         {
           method: "PUT",
           body: JSON.stringify(record),
@@ -139,7 +145,8 @@ export default function Maintenance() {
   const deleteRecord = async (id) => {
     try {
       const response = await fetch(
-        "http://localhost:3000/maintenanceRecord/" + id,
+        "https://evidencijabackend-1.onrender.com/record/maintenanceRecord/" +
+          id,
         {
           method: "DELETE",
         }

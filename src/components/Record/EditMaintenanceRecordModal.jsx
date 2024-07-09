@@ -25,7 +25,7 @@ export default function EditMaintenanceRecordModal({ onEdit, onClose, id }) {
   const fetchRecord = async () => {
     try {
       const response = await fetch(
-        "http://localhost:3000/maintenanceRecord/" + id
+        "https://evidencijabackend-1.onrender.com/maintenanceRecord/" + id
       );
       if (response.ok) {
         const data = await response.json();

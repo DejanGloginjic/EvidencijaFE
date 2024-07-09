@@ -13,7 +13,7 @@ export default function RecordsPage() {
 
   const fetchRecords = async () => {
     try {
-      const response = await fetch("http://localhost:3000/");
+      const response = await fetch("https://evidencijabackend-1.onrender.com/");
       if (response.ok) {
         const data = await response.json();
         setRecords(data);
@@ -28,13 +28,16 @@ export default function RecordsPage() {
 
   const createRecord = async (record) => {
     try {
-      const response = await fetch("http://localhost:3000/record", {
-        method: "POST",
-        body: JSON.stringify(record),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://evidencijabackend-1.onrender.com/record",
+        {
+          method: "POST",
+          body: JSON.stringify(record),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       if (response.ok) {
         const data = await response.json();
         console.log(data);
@@ -51,7 +54,7 @@ export default function RecordsPage() {
   const editRecord = async (record) => {
     try {
       const response = await fetch(
-        "http://localhost:3000/record/" + record.id,
+        "https://evidencijabackend-1.onrender.com/record/" + record.id,
         {
           method: "PUT",
           body: JSON.stringify(record),
@@ -130,9 +133,12 @@ export default function RecordsPage() {
 
   const deleteRecord = async (id) => {
     try {
-      const response = await fetch("http://localhost:3000/record/" + id, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        "https://evidencijabackend-1.onrender.com/record/record/" + id,
+        {
+          method: "DELETE",
+        }
+      );
       if (response.ok) {
         const data = await response.json();
         setRecords((prevState) => prevState.filter((rec) => rec.id != id));
